@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My AI Stack — Full Connector & Skills Template</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0a0a0f;
+    color: #e8e8f0;
+    line-height: 1.6;
+  }
+  .wrapper { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 56px 32px 48px;
+    background: linear-gradient(135deg, #1a0a2e 0%, #0f0f1a 50%, #0a1a2e 100%);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(120,80,255,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(120,80,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(120,80,255,0.15);
+    border: 1px solid rgba(120,80,255,0.4);
+    color: #b088ff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffffff 30%, #b088ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+  .header p {
+    color: #8888aa;
+    font-size: 15px;
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .stats-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 28px; font-weight: 800; color: #b088ff; }
+  .stat-label { font-size: 11px; color: #666688; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #7755cc;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(120,80,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon { font-size: 16px; }
+
+  /* Connector cards grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+  }
+  .card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(120,80,255,0.4); }
+  .card-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d8d8f0;
+    margin-bottom: 3px;
+  }
+  .card-desc {
+    font-size: 11px;
+    color: #666688;
+  }
+  .card-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #44cc88;
+    margin-right: 6px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .card-dot.partial { background: #ffaa44; }
+  .card-dot.available { background: #6688ff; }
+
+  /* Skills pills */
+  .skills-group { margin-bottom: 24px; }
+  .skills-group-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9977dd;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .skills-group-title span { font-size: 15px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    background: rgba(100,70,200,0.12);
+    border: 1px solid rgba(100,70,200,0.25);
+    color: #aaaadd;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* Category blocks */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .cat-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .cat-block-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9977dd;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .cat-skill-list li {
+    font-size: 12px;
+    color: #9999bb;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cat-skill-list li::before {
+    content: '›';
+    color: #7755cc;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    margin-top: 40px;
+  }
+  .footer p { color: #555577; font-size: 12px; }
+  .footer a { color: #9977dd; text-decoration: none; }
+  .footer .signature {
+    font-size: 18px;
+    font-weight: 700;
+    color: #b088ff;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(120,80,255,0.3), transparent);
+    margin: 32px 0;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: rgba(120,80,255,0.08);
+    border: 1px solid rgba(120,80,255,0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #b0a0dd;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 26px; }
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">⚡ Full Stack Template</div>
+    <h1>My AI Agent Stack</h1>
+    <p>Every connector, skill, and tool wired into my Claude Cowork setup — built to run across sales, engineering, research, finance, ops, and beyond.</p>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">MCP Connectors</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Skills</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Domains</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Use Cases</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS THIS -->
+  <div class="highlight-box">
+    🧠 <strong>What this is:</strong> A full catalogue of my AI-agent infrastructure running on Anthropic's Claude + Cowork. Every tool listed here can be invoked by the AI autonomously — reading data, writing content, managing tasks, deploying code, doing research, and more. This is the stack. Copy it, adapt it, or reach out to talk.
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">🔌</span> Live MCP Connectors</div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>📋</span> Project Management & Productivity</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Asana</div><div class="card-desc">Tasks, projects, portfolios, status</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Linear</div><div class="card-desc">Issues, cycles, milestones, docs</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Notion</div><div class="card-desc">Pages, databases, search, teams</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>GitHub</div><div class="card-desc">PRs, issues, code, repos</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Fantastical</div><div class="card-desc">Calendar events, scheduling</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Drafts</div><div class="card-desc">Quick notes, actions, workspaces</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Apple Notes</div><div class="card-desc">Read, write, list notes</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Jira / Atlassian</div><div class="card-desc">Issues, sprints (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>ClickUp</div><div class="card-desc">Tasks, projects (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Monday.com</div><div class="card-desc">Boards, items (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>MS 365</div><div class="card-desc">Office suite (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>💼</span> Sales & CRM</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>HubSpot</div><div class="card-desc">CRM objects, campaigns, analytics</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Apollo.io</div><div class="card-desc">Leads, sequences, enrichment</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Common Room</div><div class="card-desc">Signals, accounts, prospecting</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Vibe Prospecting</div><div class="card-desc">Enrich, match, prospect leads</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Outreach</div><div class="card-desc">Sequences (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Close CRM</div><div class="card-desc">Deals, contacts (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>📊</span> Data, Analytics & BI</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>PostHog</div><div class="card-desc">Events, funnels, flags, replays</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>MS Clarity</div><div class="card-desc">Heatmaps, sessions, analytics</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Coupler.io</div><div class="card-desc">Dataflows, schema, sync</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Massive Market Data</div><div class="card-desc">Stocks, crypto, options, forex</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>BigQuery</div><div class="card-desc">Queries, datasets (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Snowflake</div><div class="card-desc">Warehousing (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Databricks</div><div class="card-desc">Lakehouse (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Hex</div><div class="card-desc">Notebooks (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Amplitude</div><div class="card-desc">Product analytics (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Supermetrics</div><div class="card-desc">Marketing data (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>🎨</span> Design & Creative</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Figma</div><div class="card-desc">Design context, components, vars</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Gamma</div><div class="card-desc">AI presentations, templates</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Lucidchart</div><div class="card-desc">Diagrams, flowcharts, org charts</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Higgsfield</div><div class="card-desc">AI video generation, characters</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Canva</div><div class="card-desc">Design (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>☁️</span> Infrastructure & Cloud</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Cloudflare</div><div class="card-desc">Workers, D1, KV, R2, Hyperdrive</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Vercel</div><div class="card-desc">Deployments, projects, logs</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Kubernetes</div><div class="card-desc">Clusters, pods, helm, scaling</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Postman</div><div class="card-desc">Collections, specs, mocks, envs</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Datadog</div><div class="card-desc">Monitoring, alerts (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>PagerDuty</div><div class="card-desc">Incidents (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>💬</span> Communication & Messaging</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Slack</div><div class="card-desc">Messages, channels, search</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Mailtrap</div><div class="card-desc">Email testing, sandbox, send</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Gmail</div><div class="card-desc">Read, send, manage (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Google Calendar</div><div class="card-desc">Events, scheduling (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Intercom</div><div class="card-desc">Support, users (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Fireflies</div><div class="card-desc">Meeting notes (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>📁</span> Files, Docs & Storage</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Google Drive</div><div class="card-desc">Files, search, metadata, copy</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Filesystem (local)</div><div class="card-desc">Read, write, search local files</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>PDF Tools</div><div class="card-desc">Fill, sign, merge, split, extract</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Docling MCP</div><div class="card-desc">Structured doc conversion</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Word (Anthropic)</div><div class="card-desc">Create/edit .docx natively</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>PowerPoint (Anthropic)</div><div class="card-desc">Create/edit .pptx natively</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Box</div><div class="card-desc">Cloud files (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Egnyte</div><div class="card-desc">Enterprise storage (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>🌐</span> Web, Automation & Computer Use</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Claude in Chrome</div><div class="card-desc">DOM-level browser control</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Playwright</div><div class="card-desc">Browser automation, scraping</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Computer Use</div><div class="card-desc">Full desktop control, screenshots</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Desktop Commander</div><div class="card-desc">File system, processes, shell</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Control Mac</div><div class="card-desc">macOS automation via AppleScript</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Apify</div><div class="card-desc">Web scraping actors marketplace</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>B12</div><div class="card-desc">AI website generation</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>🔬</span> Research & Knowledge</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Consensus</div><div class="card-desc">AI-powered academic search</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>PubMed</div><div class="card-desc">Biomedical literature search</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Cloudglue</div><div class="card-desc">Video AI — search, chapters, entities</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Enrichr</div><div class="card-desc">Gene set enrichment analysis</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>PopHIVE</div><div class="card-desc">Public health datasets</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Philanthropy/990</div><div class="card-desc">Foundation grants & funder data</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Wiley</div><div class="card-desc">Academic journals (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Guru</div><div class="card-desc">Enterprise wiki search (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Ahrefs</div><div class="card-desc">SEO & backlinks (plugin)</div></div>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <div class="skills-group-title"><span>🤖</span> AI Models & Blockchain</div>
+      <div class="cards-grid">
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Ollama</div><div class="card-desc">Local LLM inference (any model)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot"></span>Blockchain Explorer</div><div class="card-desc">On-chain data, contracts, tokens</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>DocuSign</div><div class="card-desc">E-signatures (plugin)</div></div>
+        <div class="card"><div class="card-name"><span class="card-dot available"></span>Klaviyo</div><div class="card-desc">Email marketing (plugin)</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">⚡</span> Skills Library — What the AI Can Do</div>
+
+    <div class="cat-grid">
+
+      <div class="cat-block">
+        <div class="cat-block-title">⚙️ Engineering</div>
+        <ul class="cat-skill-list">
+          <li>Architecture & ADRs</li>
+          <li>Code Review</li>
+          <li>Debug (root cause analysis)</li>
+          <li>System Design</li>
+          <li>Deploy Checklist</li>
+          <li>Incident Response + Postmortem</li>
+          <li>Testing Strategy</li>
+          <li>Technical Documentation</li>
+          <li>Tech Debt Audit</li>
+          <li>Daily Standup</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">📈 Sales</div>
+        <ul class="cat-skill-list">
+          <li>Account Research</li>
+          <li>Call Prep & Briefing</li>
+          <li>Call Summary & Follow-up</li>
+          <li>Draft Personalized Outreach</li>
+          <li>Pipeline Review</li>
+          <li>Forecast (3-scenario)</li>
+          <li>Competitive Intelligence</li>
+          <li>Create Sales Assets</li>
+          <li>Daily Briefing</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">📣 Marketing</div>
+        <ul class="cat-skill-list">
+          <li>Campaign Planning</li>
+          <li>Content Creation (all channels)</li>
+          <li>SEO Audit</li>
+          <li>Email Sequences</li>
+          <li>Competitive Brief</li>
+          <li>Brand Review</li>
+          <li>Performance Report</li>
+          <li>LinkedIn Post Writer</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🗺️ Product Management</div>
+        <ul class="cat-skill-list">
+          <li>Write Spec / PRD</li>
+          <li>Sprint Planning</li>
+          <li>Roadmap Update</li>
+          <li>Stakeholder Update</li>
+          <li>Metrics Review</li>
+          <li>Synthesize Research</li>
+          <li>Competitive Brief</li>
+          <li>Product Brainstorming</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🎨 Design</div>
+        <ul class="cat-skill-list">
+          <li>Design Critique</li>
+          <li>Accessibility Review (WCAG)</li>
+          <li>Design Handoff Spec</li>
+          <li>Design System Audit</li>
+          <li>UX Copy</li>
+          <li>User Research Plan</li>
+          <li>Research Synthesis</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">📊 Data & Analytics</div>
+        <ul class="cat-skill-list">
+          <li>SQL Query Writing</li>
+          <li>Data Exploration</li>
+          <li>Statistical Analysis</li>
+          <li>Data Visualization</li>
+          <li>Build Interactive Dashboard</li>
+          <li>Validate Analysis</li>
+          <li>Data Context Extractor</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">💰 Finance</div>
+        <ul class="cat-skill-list">
+          <li>Financial Statements</li>
+          <li>Journal Entry Prep</li>
+          <li>Variance Analysis</li>
+          <li>Account Reconciliation</li>
+          <li>Month-End Close</li>
+          <li>SOX Testing</li>
+          <li>Audit Support</li>
+          <li>Daloopa: DCF, Comps, Model</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">⚖️ Legal</div>
+        <ul class="cat-skill-list">
+          <li>Contract Review</li>
+          <li>NDA Triage</li>
+          <li>Legal Risk Assessment</li>
+          <li>Compliance Check</li>
+          <li>Legal Response Templates</li>
+          <li>Vendor Check</li>
+          <li>Signature Request</li>
+          <li>Meeting Briefing</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">👥 Human Resources</div>
+        <ul class="cat-skill-list">
+          <li>Performance Reviews</li>
+          <li>Interview Plans & Scorecards</li>
+          <li>Comp Analysis</li>
+          <li>Offer Letter</li>
+          <li>Onboarding Plans</li>
+          <li>Org Planning</li>
+          <li>People Reports</li>
+          <li>Policy Lookup</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🏭 Operations</div>
+        <ul class="cat-skill-list">
+          <li>Process Documentation</li>
+          <li>Process Optimization</li>
+          <li>Risk Assessment</li>
+          <li>Runbooks (SOP)</li>
+          <li>Status Reports</li>
+          <li>Capacity Planning</li>
+          <li>Vendor Review</li>
+          <li>Change Management</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🔬 Bio Research</div>
+        <ul class="cat-skill-list">
+          <li>scVI / scANVI Analysis</li>
+          <li>Single-Cell RNA QC</li>
+          <li>Nextflow Pipelines</li>
+          <li>Scientific Problem Selection</li>
+          <li>Instrument Data to Allotrope</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🎙️ Brand Voice</div>
+        <ul class="cat-skill-list">
+          <li>Discover Brand Materials</li>
+          <li>Generate Brand Guidelines</li>
+          <li>Enforce Voice on Content</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🎧 Customer Support</div>
+        <ul class="cat-skill-list">
+          <li>Ticket Triage</li>
+          <li>Draft Response</li>
+          <li>Customer Research</li>
+          <li>KB Article Writing</li>
+          <li>Escalation Package</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">📦 Document Creation</div>
+        <ul class="cat-skill-list">
+          <li>Word Documents (.docx)</li>
+          <li>Excel Spreadsheets (.xlsx)</li>
+          <li>PowerPoint Decks (.pptx)</li>
+          <li>PDF Generation & Signing</li>
+          <li>Gamma AI Presentations</li>
+          <li>Canvas Visual Design (PNG)</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🎲 Creative & AI Art</div>
+        <ul class="cat-skill-list">
+          <li>Algorithmic Art (p5.js)</li>
+          <li>Canvas Design (poster/art)</li>
+          <li>Slack GIF Creator</li>
+          <li>Higgsfield AI Video</li>
+          <li>Theme Factory (10 themes)</li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-block-title">🛠️ Infrastructure / Meta</div>
+        <ul class="cat-skill-list">
+          <li>MCP Server Builder</li>
+          <li>Skill Creator + Evals</li>
+          <li>Plugin Builder</li>
+          <li>Schedule Recurring Tasks</li>
+          <li>Persistent Live Artifacts</li>
+          <li>Memory Management</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">🔑</span> Legend</div>
+    <div class="pills" style="gap: 14px;">
+      <div class="pill"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#44cc88;margin-right:6px;vertical-align:middle;"></span> Active & connected</div>
+      <div class="pill"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ffaa44;margin-right:6px;vertical-align:middle;"></span> Partially configured</div>
+      <div class="pill"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#6688ff;margin-right:6px;vertical-align:middle;"></span> Available via plugin (auth needed)</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="signature">Built with Claude + Cowork</div>
+    <p style="margin-bottom: 8px; color: #8888aa;">This stack runs on Anthropic's Claude with the Cowork desktop app. Each connector is an MCP server — giving the AI real-time read/write access to the tools above.</p>
+    <p style="margin-top: 12px;">
+      🌐 <a href="https://claude.ai">claude.ai</a> &nbsp;·&nbsp;
+      📖 <a href="https://docs.claude.com">docs.claude.com</a> &nbsp;·&nbsp;
+      ⚡ Template by <strong style="color:#b088ff;">Sparsh Sharma</strong>
+    </p>
+    <p style="margin-top: 16px; font-size: 11px; color: #444466;">
+      Connector count grows constantly — this snapshot taken May 2026. Reach out to discuss setup, customisation, or building your own agent stack.
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
