@@ -1,0 +1,1 @@
+{"name":"prompt-optimizer","version":"1.0.0","type":"module","dependencies":{"@anthropic-ai/sdk":"^0.82.0","openai":"^6.33.0"}}
