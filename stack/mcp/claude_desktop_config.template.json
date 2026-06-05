@@ -1,0 +1,135 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/sparshsharma/Documents",
+        "/Users/sparshsharma/Desktop",
+        "/Users/sparshsharma/Downloads",
+        "/Users/sparshsharma/Library/Mobile Documents/iCloud~md~obsidian",
+        "/Users/sparshsharma/Library/Mobile Documents/com~apple~CloudDocs"
+      ]
+    },
+    "desktop-commander": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander"
+      ]
+    },
+    "playwright": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser",
+        "chrome"
+      ]
+    },
+    "higgsfield": {
+      "command": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "args": [
+        "-m",
+        "higgsfield_mcp.server"
+      ],
+      "env": {
+        "HF_API_KEY": "__HF_API_KEY__",
+        "HF_API_SECRET": "__HF_API_SECRET__",
+        "HIGGSFIELD_API_KEY": "__HIGGSFIELD_API_KEY__",
+        "HIGGSFIELD_SECRET": "__HIGGSFIELD_SECRET__"
+      }
+    },
+    "ollama": {
+      "command": "/opt/homebrew/bin/npx",
+      "args": [
+        "-y",
+        "ollama-mcp-server"
+      ],
+      "env": {
+        "OLLAMA_HOST": "__OLLAMA_HOST__"
+      }
+    },
+    "github": {
+      "command": "/Users/sparshsharma/.local/bin/gh-mcp-wrapper.sh",
+      "args": []
+    }
+  },
+  "coworkUserFilesPath": "/Users/sparshsharma/Documents/Claude",
+  "preferences": {
+    "quickEntryShortcut": {
+      "accelerator": "Alt+Space"
+    },
+    "quickEntryDictationShortcut": "off",
+    "chillingSlothLocation": {
+      "customPath": "/Users/sparshsharma/Documents/1_Projects"
+    },
+    "launchPreviewPersistSession": true,
+    "launchPreviewPersistedWorkspaces": [
+      "e9ba0e8d913c",
+      "a03abfbdc3bd"
+    ],
+    "localAgentModeTrustedFolders": [
+      "/Users/sparshsharma/Documents/2-university/Sem 1 2026/Electronics/assingment 1",
+      "/Users/sparshsharma/Documents/Claude/Projects/Helios.ai"
+    ],
+    "allowAllBrowserActions": true,
+    "dispatchCodeTasksPermissionMode": "plan",
+    "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": true,
+    "sidebarMode": "task",
+    "bypassPermissionsModeEnabled": true,
+    "bypassPermissionsOptInByAccount": {
+      "ab86ee3b-a98a-4132-b5fd-12ff7089b244": true
+    },
+    "bypassPermissionsGateByAccount": {
+      "ab86ee3b-a98a-4132-b5fd-12ff7089b244": true
+    },
+    "dockBounceEnabled": true,
+    "coworkWebSearchEnabled": true,
+    "coworkModelAutoFallbackByAccount": {
+      "ab86ee3b-a98a-4132-b5fd-12ff7089b244": true
+    },
+    "keepAwakeEnabled": false,
+    "coworkOnboardingResumeStep": null,
+    "chicagoEnabled": true,
+    "remoteToolsDeviceName": "sparshs-macbook-air-local",
+    "chicagoUserDeniedBundleIds": [
+      "com.apple.keychainaccess"
+    ],
+    "ccAutoArchiveOnPrClose": true,
+    "ccRemoteControlDefaultEnabled": true,
+    "epitaxyPrefs": {
+      "starred-local-code-sessions": [
+        "local_3f7621d2-be04-4a2c-bbb6-ae8d7266803a"
+      ],
+      "starred-cowork-spaces": [],
+      "starred-session-groups": [],
+      "dframe-local-slice": {
+        "pinnedOrder": [
+          "code:local_3f7621d2-be04-4a2c-bbb6-ae8d7266803a"
+        ],
+        "customGroupAssignments": {},
+        "customGroupOrder": {}
+      },
+      "epitaxy-perm-mode-acks.ab86ee3b-a98a-4132-b5fd-12ff7089b244": [
+        "/Users/sparshsharma:bypassPermissions",
+        "/Users/sparshsharma/Documents/New bizz venture w Josh:bypassPermissions"
+      ],
+      "epitaxy-folder-permission-mode.ab86ee3b-a98a-4132-b5fd-12ff7089b244": {
+        "/Users/sparshsharma": "bypassPermissions",
+        "remote:spalsh-spec/vak-kanaja-launch": "plan",
+        "/Users/sparshsharma/Documents/New bizz venture w Josh": "bypassPermissions"
+      },
+      "claude-code-preferred-editor": "vscode",
+      "cc-landing-draft-permission-mode": "plan"
+    },
+    "chromeExtension": {
+      "pairedDeviceId": "eda94553-4869-49e7-83f1-c5c9e829b20f",
+      "pairedDeviceName": "Browser 1",
+      "pairedFromDeviceIds": [
+        "eda94553-4869-49e7-83f1-c5c9e829b20f"
+      ]
+    }
+  }
+}

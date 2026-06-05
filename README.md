@@ -41,3 +41,29 @@ Built by **Sparsh Sharma** · [sparshsharma219@gmail.com](mailto:sparshsharma219
 ---
 
 *Snapshot: May 2026 — connector count grows continuously.*
+
+---
+
+## 🖥 Load this stack onto a Mac mini (or any Mac)
+
+One command on the new machine:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/spalsh-spec/ai-stack-template/main/bootstrap.sh)"
+```
+
+That clones this repo and runs `install.sh`, which sets up:
+
+| Step | What it installs |
+|---|---|
+| Homebrew + core packages | `node`, `gh`, `ollama` (add `--full` for the complete formula list) |
+| Claude Desktop | via brew cask |
+| **47 skills** | copied into `~/.claude/skills/` (existing skills untouched) |
+| **6 MCP servers** | filesystem · desktop-commander · playwright · higgsfield · ollama · github — config written with `__PLACEHOLDER__` keys, paths rewritten for the new user |
+| Local models | `--models` flag pulls `qwen2.5:7b` + `gemma3:4b` (~8 GB) |
+
+Then the new owner does 5 minutes of personal setup: sign into Claude, drop their own API keys where the placeholders are (`stack/mcp/REQUIRED_KEYS.json` lists them), `gh auth login`, and add the Cowork plugins from `stack/plugins/*.json`.
+
+**No secrets ship in this repo** — every key is a placeholder (verified with gitleaks on every export).
+
+To refresh the snapshot from the source machine: `./export.sh && git commit -am "refresh stack" && git push`.

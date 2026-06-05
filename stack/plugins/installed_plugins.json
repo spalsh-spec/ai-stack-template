@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "plugins": {
+    "vercel-plugin@vercel-vercel-plugin": [
+      {
+        "scope": "user",
+        "installPath": "/Users/sparshsharma/.claude/plugins/cache/vercel-vercel-plugin/vercel-plugin/0.32.0",
+        "version": "0.32.0",
+        "installedAt": "2026-04-08T03:06:08.477Z",
+        "lastUpdated": "2026-04-08T03:06:08.477Z",
+        "gitCommitSha": "b95178c7d8dfb2d48f142825dd967b71d7552eab"
+      }
+    ],
+    "vercel@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/sparshsharma/.claude/plugins/cache/claude-plugins-official/vercel/0.43.0",
+        "version": "0.43.0",
+        "installedAt": "2026-04-08T18:53:27.262Z",
+        "lastUpdated": "2026-05-20T11:56:21.794Z",
+        "gitCommitSha": "b95178c7d8dfb2d48f142825dd967b71d7552eab"
+      }
+    ]
+  }
+}

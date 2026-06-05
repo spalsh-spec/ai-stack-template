@@ -1,0 +1,18 @@
+{
+  "vercel-vercel-plugin": {
+    "source": {
+      "source": "directory",
+      "path": "/Users/sparshsharma/.cache/plugins/.install-staging/b1508bc73c53040ef2452b71e1997b78ebb9ef0d/claude-code/repo"
+    },
+    "installLocation": "/Users/sparshsharma/.cache/plugins/.install-staging/b1508bc73c53040ef2452b71e1997b78ebb9ef0d/claude-code/repo",
+    "lastUpdated": "2026-04-08T03:06:07.857Z"
+  },
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/Users/sparshsharma/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-05-20T12:17:29.121Z"
+  }
+}

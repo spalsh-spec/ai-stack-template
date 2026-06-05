@@ -1,0 +1,7 @@
+{
+  "__HF_API_KEY__": "higgsfield: set your own HF_API_KEY",
+  "__HF_API_SECRET__": "higgsfield: set your own HF_API_SECRET",
+  "__HIGGSFIELD_API_KEY__": "higgsfield: set your own HIGGSFIELD_API_KEY",
+  "__HIGGSFIELD_SECRET__": "higgsfield: set your own HIGGSFIELD_SECRET",
+  "__OLLAMA_HOST__": "ollama: set your own OLLAMA_HOST"
+}
