@@ -58,3 +58,4 @@ cat <<'EOF'
   4. Restart Claude Desktop. Done — the stack is live.
 EOF
 echo; echo "✅ Stack installed. $(date)"
+echo "👉 Check everything: bash ~/ai-stack-template/verify.sh"

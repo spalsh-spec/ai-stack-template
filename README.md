@@ -49,7 +49,7 @@ Built by **Sparsh Sharma** · [sparshsharma219@gmail.com](mailto:sparshsharma219
 One command on the new machine:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/spalsh-spec/ai-stack-template/main/bootstrap.sh)"
+curl -fsSL https://raw.githubusercontent.com/spalsh-spec/ai-stack-template/main/bootstrap.sh | bash
 ```
 
 That clones this repo and runs `install.sh`, which sets up:
@@ -61,6 +61,8 @@ That clones this repo and runs `install.sh`, which sets up:
 | **47 skills** | copied into `~/.claude/skills/` (existing skills untouched) |
 | **6 MCP servers** | filesystem · desktop-commander · playwright · higgsfield · ollama · github — config written with `__PLACEHOLDER__` keys, paths rewritten for the new user |
 | Local models | `--models` flag pulls `qwen2.5:7b` + `gemma3:4b` (~8 GB) |
+
+**Check it worked:** `bash ~/ai-stack-template/verify.sh` — prints PASS/FAIL per component.
 
 Then the new owner does 5 minutes of personal setup: sign into Claude, drop their own API keys where the placeholders are (`stack/mcp/REQUIRED_KEYS.json` lists them), `gh auth login`, and add the Cowork plugins from `stack/plugins/*.json`.
 
