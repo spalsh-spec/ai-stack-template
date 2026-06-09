@@ -1,0 +1,174 @@
+{
+  "_description": "Claude.ai OAuth cloud connectors. Connect at: claude.ai/settings > Connectors. No API keys needed — all OAuth.",
+  "_install_order": "Connect priority-1 first (core daily use), then add by domain as needed.",
+  "connectors": [
+    {
+      "name": "Google Drive",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "category": "files",
+      "priority": 1,
+      "use_for": "Docs, Sheets, Slides in Drive"
+    },
+    {
+      "name": "Notion",
+      "url": "https://mcp.notion.com/mcp",
+      "category": "knowledge",
+      "priority": 1,
+      "use_for": "Notes, databases, Obsidian-equivalent in browser"
+    },
+    {
+      "name": "Linear",
+      "url": "https://mcp.linear.app/mcp",
+      "category": "dev",
+      "priority": 1,
+      "use_for": "Issues, projects, cycles, sprints"
+    },
+    {
+      "name": "Figma",
+      "url": "https://mcp.figma.com/mcp",
+      "category": "design",
+      "priority": 1,
+      "use_for": "Design files, components, code connect, FigJam"
+    },
+    {
+      "name": "Vercel",
+      "url": "https://mcp.vercel.com",
+      "category": "infra",
+      "priority": 1,
+      "use_for": "Deployments, runtime logs, preview URLs"
+    },
+    {
+      "name": "Amplitude",
+      "url": "https://mcp.amplitude.com/mcp",
+      "category": "analytics",
+      "priority": 2,
+      "use_for": "Product analytics, charts, session replays, funnels"
+    },
+    {
+      "name": "HubSpot",
+      "url": "https://mcp.hubspot.com/anthropic",
+      "category": "crm",
+      "priority": 2,
+      "use_for": "Contacts, deals, pipelines, marketing"
+    },
+    {
+      "name": "Asana",
+      "url": "https://mcp.asana.com/v2/mcp",
+      "category": "project",
+      "priority": 2,
+      "use_for": "Tasks, projects, portfolios, teams"
+    },
+    {
+      "name": "Cloudflare Developer Platform",
+      "url": "https://bindings.mcp.cloudflare.com/mcp",
+      "category": "infra",
+      "priority": 2,
+      "use_for": "Workers, KV, R2, D1, queues"
+    },
+    {
+      "name": "Canva",
+      "url": "https://mcp.canva.com/mcp",
+      "category": "design",
+      "priority": 2,
+      "use_for": "Designs, presentations, brand kits, social posts"
+    },
+    {
+      "name": "Zapier",
+      "url": "https://mcp.zapier.com/api/v1/connect",
+      "category": "automation",
+      "priority": 2,
+      "use_for": "9000+ app integrations and automated workflows"
+    },
+    {
+      "name": "Miro",
+      "url": "https://mcp.miro.com",
+      "category": "design",
+      "priority": 2,
+      "use_for": "Whiteboards, diagrams, retrospectives, planning"
+    },
+    {
+      "name": "MotherDuck",
+      "url": "https://api.motherduck.com/mcp",
+      "category": "data",
+      "priority": 2,
+      "use_for": "DuckDB in the cloud — fast SQL analytics"
+    },
+    {
+      "name": "Microsoft 365",
+      "url": "https://microsoft365.mcp.claude.com/mcp",
+      "category": "productivity",
+      "priority": 3,
+      "use_for": "Outlook, Teams, OneDrive, Calendar, SharePoint"
+    },
+    {
+      "name": "Lucid",
+      "url": "https://mcp.lucid.app/mcp",
+      "category": "design",
+      "priority": 3,
+      "use_for": "Flowcharts, org charts, ERDs, sequence diagrams"
+    },
+    {
+      "name": "Gamma",
+      "url": "https://mcp.gamma.app/mcp",
+      "category": "content",
+      "priority": 3,
+      "use_for": "AI-generated presentations, docs, web pages"
+    },
+    {
+      "name": "Descript",
+      "url": "https://api.descript.com/v2/mcp/claude",
+      "category": "media",
+      "priority": 3,
+      "use_for": "Video editing, transcripts, podcasts, audio cleanup"
+    },
+    {
+      "name": "Excalidraw",
+      "url": "https://mcp.excalidraw.com/mcp",
+      "category": "design",
+      "priority": 3,
+      "use_for": "Hand-drawn style diagrams and sketches"
+    },
+    {
+      "name": "Semrush",
+      "url": "https://mcp.semrush.com/claude/v1/mcp",
+      "category": "marketing",
+      "priority": 3,
+      "use_for": "SEO, keyword research, backlinks, competitor analysis"
+    },
+    {
+      "name": "Blockscout",
+      "url": "https://mcp.blockscout.com/mcp",
+      "category": "web3",
+      "priority": 4,
+      "use_for": "Blockchain explorer, on-chain data, smart contracts"
+    },
+    {
+      "name": "Kindora Funder Discovery",
+      "url": "https://kindora-mcp.azurewebsites.net/mcp",
+      "category": "research",
+      "priority": 4,
+      "use_for": "Grant and funder research for nonprofits and startups"
+    },
+    {
+      "name": "Klarity",
+      "url": "https://architect-v2-api.klarity.ai/mcp",
+      "category": "research",
+      "priority": 4,
+      "use_for": "Contract analysis and legal intelligence"
+    },
+    {
+      "name": "Interactive Brokers (IBKR)",
+      "url": "https://api.ibkr.com/v1/api/mcp",
+      "category": "finance",
+      "priority": 4,
+      "use_for": "Trading, portfolio management, market data"
+    },
+    {
+      "name": "Alma",
+      "url": "https://mcp.alma.food",
+      "category": "lifestyle",
+      "priority": 4,
+      "use_for": "Food and nutrition tracking"
+    }
+  ]
+}

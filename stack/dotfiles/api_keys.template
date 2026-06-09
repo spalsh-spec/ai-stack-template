@@ -1,0 +1,31 @@
+# ~/.api_keys — AI API keys, sourced by ~/.zshrc via zshrc_ai.sh
+# ---------------------------------------------------------------
+# SETUP: cp ~/ai-stack-template/stack/dotfiles/api_keys.template ~/.api_keys
+#        chmod 600 ~/.api_keys
+#        Then fill in your actual keys below.
+# NEVER commit this file. It is in .gitignore.
+
+# ── Anthropic ──────────────────────────────────────────────────
+# Required for: Claude Code (~/bin/claude), direct API calls
+# Get from: https://console.anthropic.com → API Keys
+export ANTHROPIC_API_KEY="__YOUR_ANTHROPIC_KEY__"
+
+# ── Kimi / Moonshot ────────────────────────────────────────────
+# KIMI_CODE_API_KEY: routes Claude Code → kimi-for-coding (sk-kimi-...)
+# Get from: https://platform.moonshot.ai → API Keys
+export KIMI_CODE_API_KEY="__YOUR_KIMI_CODE_KEY__"
+
+# MOONSHOT_API_KEY: direct kimi-k2 API (separate key)
+export MOONSHOT_API_KEY="__YOUR_MOONSHOT_KEY__"
+
+# ── GitHub ─────────────────────────────────────────────────────
+# Preferred: run 'gh auth login' instead of setting this.
+# If you need a PAT: github.com/settings/tokens → Classic → repo,read:org
+export GITHUB_TOKEN="__YOUR_GITHUB_PAT_OR_LEAVE_BLANK__"
+
+# ── Higgsfield (video generation) ──────────────────────────────
+# Get from: https://app.higgsfield.ai → Settings → API Keys
+export HIGGSFIELD_API_KEY="__YOUR_HIGGSFIELD_KEY__"
+
+# ── Local services (usually no change needed) ──────────────────
+export OLLAMA_HOST="http://127.0.0.1:11434"

@@ -1,7 +1,41 @@
 {
-  "__HF_API_KEY__": "higgsfield: set your own HF_API_KEY",
-  "__HF_API_SECRET__": "higgsfield: set your own HF_API_SECRET",
-  "__HIGGSFIELD_API_KEY__": "higgsfield: set your own HIGGSFIELD_API_KEY",
-  "__HIGGSFIELD_SECRET__": "higgsfield: set your own HIGGSFIELD_SECRET",
-  "__OLLAMA_HOST__": "ollama: set your own OLLAMA_HOST"
+  "_note": "Every __PLACEHOLDER__ in claude_desktop_config.json must be replaced. Cloud connectors use OAuth — no keys needed for those.",
+  "local_mcp_keys": [
+    {
+      "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "in": "claude_desktop_config.json → github server",
+      "get_from": "https://github.com/settings/tokens → Classic → repo,read:org scopes",
+      "note": "Preferred: run 'gh auth login' then leave this as __PLACEHOLDER__"
+    },
+    {
+      "key": "HIGGSFIELD_API_KEY",
+      "in": "claude_desktop_config.json → higgsfield server",
+      "get_from": "https://app.higgsfield.ai → Settings → API Keys",
+      "note": "Optional — only needed for AI video generation"
+    }
+  ],
+  "dotfile_keys": [
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "in": "~/.api_keys",
+      "get_from": "https://console.anthropic.com → API Keys",
+      "note": "Required for Claude Code (~/bin/claude) and direct API calls"
+    },
+    {
+      "key": "KIMI_CODE_API_KEY",
+      "in": "~/.api_keys",
+      "get_from": "https://platform.moonshot.ai → API Keys",
+      "note": "Routes Claude Code → kimi-for-coding endpoint. Format: sk-kimi-..."
+    },
+    {
+      "key": "MOONSHOT_API_KEY",
+      "in": "~/.api_keys",
+      "get_from": "https://platform.moonshot.ai → API Keys",
+      "note": "Direct kimi-k2 API access (separate from KIMI_CODE_API_KEY)"
+    }
+  ],
+  "cloud_connectors": {
+    "note": "OAuth — connect at claude.ai/settings > Connectors. No keys stored locally.",
+    "manifest": "stack/plugins/cowork-connectors.json"
+  }
 }

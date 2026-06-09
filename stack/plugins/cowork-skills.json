@@ -1,0 +1,95 @@
+{
+  "_description": "Cowork marketplace skills — install via Claude > Settings > Capabilities > Skills. Grouped by domain.",
+  "_count": "200+ skills across 16 domains",
+  "skills": {
+    "docs": [
+      "docx", "pdf", "pptx", "xlsx",
+      "file-reading", "pdf-reading"
+    ],
+    "frontend_design": [
+      "frontend-design", "web-artifacts-builder",
+      "canvas-design", "algorithmic-art", "theme-factory",
+      "slack-gif-creator"
+    ],
+    "meta_infra": [
+      "product-self-knowledge", "mcp-builder", "skill-creator",
+      "doc-coauthoring", "internal-comms"
+    ],
+    "user_skills": [
+      "karpathy-guidelines", "oracle-mind",
+      "linkedin-post-writer", "version-tracker"
+    ],
+    "engineering": [
+      "engineering:debug", "engineering:code-review",
+      "engineering:system-design", "engineering:architecture",
+      "engineering:testing-strategy", "engineering:documentation",
+      "engineering:incident-response", "engineering:deploy-checklist",
+      "engineering:tech-debt", "engineering:standup"
+    ],
+    "product_management": [
+      "product-management:write-spec", "product-management:roadmap-update",
+      "product-management:sprint-planning", "product-management:metrics-review",
+      "product-management:product-brainstorming", "product-management:stakeholder-update",
+      "product-management:synthesize-research", "product-management:competitive-brief"
+    ],
+    "sales": [
+      "sales:pipeline-review", "sales:call-prep", "sales:call-summary",
+      "sales:draft-outreach", "sales:forecast", "sales:daily-briefing",
+      "sales:competitive-intelligence", "sales:account-research",
+      "sales:create-an-asset"
+    ],
+    "data": [
+      "data:analyze", "data:write-query", "data:build-dashboard",
+      "data:data-visualization", "data:explore-data",
+      "data:statistical-analysis", "data:create-viz",
+      "data:validate-data", "data:sql-queries"
+    ],
+    "design": [
+      "design:user-research", "design:design-system",
+      "design:design-handoff", "design:accessibility-review",
+      "design:ux-copy", "design:design-critique",
+      "design:research-synthesis"
+    ],
+    "marketing": [
+      "marketing:content-creation", "marketing:campaign-plan",
+      "marketing:email-sequence", "marketing:performance-report",
+      "marketing:seo-audit", "marketing:brand-review",
+      "marketing:competitive-brief", "marketing:draft-content"
+    ],
+    "finance": [
+      "finance:financial-statements", "finance:journal-entry",
+      "finance:reconciliation", "finance:variance-analysis",
+      "finance:close-management", "finance:audit-support",
+      "finance:sox-testing"
+    ],
+    "legal": [
+      "legal:triage-nda", "legal:review-contract",
+      "legal:compliance-check", "legal:signature-request",
+      "legal:legal-risk-assessment", "legal:brief",
+      "legal:meeting-briefing", "legal:vendor-check"
+    ],
+    "hr": [
+      "human-resources:comp-analysis", "human-resources:draft-offer",
+      "human-resources:performance-review", "human-resources:onboarding",
+      "human-resources:interview-prep", "human-resources:people-report",
+      "human-resources:recruiting-pipeline", "human-resources:org-planning"
+    ],
+    "operations": [
+      "operations:runbook", "operations:change-request",
+      "operations:status-report", "operations:process-optimization",
+      "operations:risk-assessment", "operations:vendor-review",
+      "operations:capacity-plan", "operations:process-doc",
+      "operations:compliance-tracking"
+    ],
+    "customer_support": [
+      "customer-support:ticket-triage", "customer-support:draft-response",
+      "customer-support:customer-escalation", "customer-support:kb-article",
+      "customer-support:customer-research"
+    ],
+    "brand": [
+      "brand-voice:guideline-generation",
+      "brand-voice:brand-voice-enforcement",
+      "brand-voice:discover-brand"
+    ]
+  }
+}
